@@ -4,14 +4,9 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
       'folke/neodev.nvim',
     },
     config = function()
-      require('mason-lspconfig').setup({
-        ensure_installed = { 'lua_ls' },
-      })
-
       require('neodev').setup({})
 
       local on_attach = function(_, bufnr)
