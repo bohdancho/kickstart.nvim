@@ -8,7 +8,6 @@ return {
       "folke/neodev.nvim"
     },
     config = function()
-      require('mason').setup()
       require('mason-lspconfig').setup({
         ensure_installed = { 'lua_ls' }
       })
@@ -44,7 +43,7 @@ return {
           vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
       end
-      local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       require('lspconfig').lua_ls.setup({ on_attach = on_attach, capabilities = capabilities })
     end
