@@ -44,7 +44,9 @@ return {
           vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
       end
-      require('lspconfig').lua_ls.setup({ on_attach = on_attach })
+      local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+      require('lspconfig').lua_ls.setup({ on_attach = on_attach, capabilities = capabilities })
     end
   },
 }
