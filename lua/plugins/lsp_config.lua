@@ -1,15 +1,15 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
+    'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "folke/neodev.nvim"
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'folke/neodev.nvim',
     },
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { 'lua_ls' }
+        ensure_installed = { 'lua_ls' },
       })
 
       require('neodev').setup({})
@@ -46,6 +46,6 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       require('lspconfig').lua_ls.setup({ on_attach = on_attach, capabilities = capabilities })
-    end
+    end,
   },
 }

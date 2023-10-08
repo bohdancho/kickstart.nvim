@@ -1,7 +1,7 @@
 return {
   -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
-  event = { "BufReadPre", "BufNewFile" },
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
@@ -9,11 +9,11 @@ return {
   config = function()
     local treesitter = require('nvim-treesitter.configs')
 
-    treesitter.setup {
+    treesitter.setup({
       -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = {'lua', 'tsx', 'javascript', 'typescript'},
+      ensure_installed = { 'lua', 'tsx', 'javascript', 'typescript' },
 
-      highlight = { enable = true, disable = {'lua'} },
+      highlight = { enable = true, disable = { 'lua' } },
       indent = { enable = true },
       incremental_selection = {
         enable = true,
@@ -68,6 +68,6 @@ return {
           },
         },
       },
-    }
-  end
+    })
+  end,
 }

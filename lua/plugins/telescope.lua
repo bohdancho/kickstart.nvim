@@ -9,37 +9,37 @@ return {
       -- NOTE: If you are having trouble with this installation,
       --       refer to the README for telescope-fzf-native for more instructions.
       build = 'make',
-      "nvim-tree/nvim-web-devicons",
+      'nvim-tree/nvim-web-devicons',
     },
   },
   config = function()
-    local telescope = require("telescope")
-    local actions = require("telescope.actions")
-    local builtin = require("telescope.builtin")
+    local telescope = require('telescope')
+    local actions = require('telescope.actions')
+    local builtin = require('telescope.builtin')
 
     telescope.setup({
       defaults = {
         -- path_display = { "truncate " },
         mappings = {
           i = {
-            ["<C-d>"] = actions.preview_scrolling_down, -- move to prev result
-            ["<C-u>"] = actions.preview_scrolling_up, -- move to next result
-            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ['<C-d>'] = actions.preview_scrolling_down, -- move to prev result
+            ['<C-u>'] = actions.preview_scrolling_up, -- move to next result
+            ['<C-k>'] = actions.move_selection_previous, -- move to prev result
+            ['<C-j>'] = actions.move_selection_next, -- move to next result
           },
         },
       },
     })
-    telescope.load_extension("fzf")
+    telescope.load_extension('fzf')
 
     vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
     vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<leader>/', function()
       -- You can pass additional configuration to telescope to change theme, layout, etc.
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
         winblend = 10,
         previewer = false,
-      })
+      }))
     end, { desc = '[/] Fuzzily search in current buffer' })
 
     vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
