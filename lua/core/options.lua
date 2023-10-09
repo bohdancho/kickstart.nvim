@@ -1,7 +1,7 @@
 -- Set highlight on search
 vim.o.hlsearch = false
 
--- Enable mouse mode
+-- Disable mouse mode
 vim.o.mouse = ''
 
 -- Sync clipboard between OS and Neovim.
