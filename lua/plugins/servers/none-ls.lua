@@ -10,7 +10,7 @@ return {
       ensure_installed = {
         'stylua',
         'eslint_d',
-        'prettier',
+        'prettierd',
       },
     })
 
@@ -36,7 +36,7 @@ return {
             return utils.root_has_file({ '.eslintrc.js', '.eslintrc.cjs' }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
           end,
         }),
-        formatting.prettier,
+        formatting.prettierd,
       },
 
       -- autoformat on save
