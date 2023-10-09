@@ -9,8 +9,8 @@ return {
       -- NOTE: If you are having trouble with this installation,
       --       refer to the README for telescope-fzf-native for more instructions.
       build = 'make',
-      'nvim-tree/nvim-web-devicons',
     },
+    'nvim-tree/nvim-web-devicons',
   },
   config = function()
     local telescope = require('telescope')
